@@ -24,5 +24,5 @@ classifiers = [
 [project.urls]
 homepage = "https://github.com/jankralx/emco_usbhv"
 
-[tool.setuptools.packages.find]
-where = ["emco_usbhv"]
+[tool.setuptools]
+packages = ["emco_usbhv"]

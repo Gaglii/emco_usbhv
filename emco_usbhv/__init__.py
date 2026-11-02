@@ -1,1 +1,1 @@
-from .emco_usbhv import EMCO_USBhv
+from .emco_usbhv import EMCO_USBhv, EMCOError
