@@ -146,7 +146,8 @@ class EMCO_USBhv:
     def status(self):
         command = [0x03, 0x00, 0xcc, 0x00, 0x00, 0x0f, 0xff, 0x09]
         response = self.transact(command)
-        if response[7] != 0x09 or response[0] not in (0x00, 0x80):
+        # last byte: 0x09 until 2026-10-29, 0x00 since 2026-11-02 (meaning unknown)
+        if response[7] not in (0x00, 0x09) or response[0] not in (0x00, 0x80):
             raise EMCOError(f'unexpected status reply {bytes(response).hex(" ")}')
         status = {}
         #print(f'Status response: {response}')
